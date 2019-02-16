@@ -1,0 +1,77 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>jcc</groupId>
+  <artifactId>TestSpringBoot</artifactId>
+  <packaging>war</packaging>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>TestSpringBoot Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+  
+  <!--  添加继承Spring Boot -->
+<parent>
+	<groupId>org.springframework.boot</groupId>
+	<artifactId>spring-boot-starter-parent</artifactId>
+	<version>2.0.2.RELEASE</version>
+</parent>
+  
+  <dependencies>
+ <!--    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency> -->
+
+	<!-- 添加spring-boot web 应用依赖 -->
+	<dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-web</artifactId>
+	</dependency>
+	
+	
+	<!-- thymeleaf 依赖 -->
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-thymeleaf</artifactId>
+    </dependency>
+    
+    
+    <dependency>
+        <groupId>mysql</groupId>
+        <artifactId>mysql-connector-java</artifactId>
+        <version>5.1.45</version>
+    </dependency> 
+    <dependency>
+        <groupId>org.mybatis</groupId>
+        <artifactId>mybatis</artifactId>
+        <version>3.4.5</version>
+    </dependency>
+    
+     <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>1.0.0</version>
+        </dependency>
+    
+    
+    
+  </dependencies>
+
+	<!-- jdk 1.8 -->
+	<properties>
+		<java.version>1.8</java.version>
+	</properties>
+  
+  <build>
+    <finalName>TestSpringBoot</finalName>
+
+	<!-- spring-boot-maven-plugin 插件 -->
+	<plugins>
+		<plugin>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-maven-plugin</artifactId>
+		</plugin>
+	</plugins>
+  </build>
+</project>

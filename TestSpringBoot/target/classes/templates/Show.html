@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<!-- 添加xmlns:th -->
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<!-- thymeleaf模板语法,都以th属性开头 -->
+id=<span th:text="${user.id}"></span> <br/>
+username=<span th:text="${user.username}"></span><br/>
+password=<span th:text="${user.password}"></span>
+
+</body>
+</html>

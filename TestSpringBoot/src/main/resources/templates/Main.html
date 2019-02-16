@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+
+		<style>
+			.all-page {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				#border: solid red 2px;
+				overflow-y:auto; 
+			}
+			
+			.body-head {
+				width: 100%;
+				height: 5%;
+				#border: solid red 2px;
+				background-color: #E3E3E3;
+			}
+			
+			.head-car {
+				position: relative;
+				left: 80%;
+				width: 20%;
+				height: 100%;
+				#border: solid red 2px;
+			}
+			
+			.order-list {
+				position: relative;
+				#background-color: yellowgreen;
+				width: 30%;
+				height: 100%;
+				font-size: 15px;
+				font-weight: 1100;
+				text-align: center;
+				color: #D2D2D2;
+				line-height: 100%;
+				top: 30%;
+				float: left;
+			}
+			
+			a:link,
+			a:visited {
+				text-decoration: none;
+				color: #999999;
+			}
+			
+			a:hover {
+				text-decoration: none;
+				color: #404040;
+			}
+			
+			.shopping-car {
+				position: relative;
+				background-color: #C9C9C9;
+				width: 30%;
+				height: 100%;
+				#border: solid red 2px;
+				float: left;
+			}
+			
+			.car-style {
+				position: relative;
+				width: 100%;
+				height: 70%;
+				font-size: 15px;
+				font-weight: 1100;
+				text-align: center;
+				color: #000000;
+				line-height: 100%;
+				top: 25%;
+				float: left;
+				#border: solid red 2px;
+			}
+			
+			.body {
+				position: relative;
+				width: 60%;
+				height: 100%;
+				left: 20%;
+				top: 0px;
+				#border: solid red 2px;
+				float: left;
+			}
+			
+			.body-list {
+				position: relative;
+				width: 100%;
+				height: 7%;
+				border: solid black 1px;
+			}
+			
+			.list-head {
+				position: relative;
+				width: 100%;
+				height: 20%;
+				#border: solid red 2px;
+				
+			}
+			
+			.list-div1{
+				position: relative;
+				width: 18%;
+				height: 80%;
+				#border: solid red 2px;
+				text-align: center;
+				float: left;
+				font-size: 15px;
+				font-weight: 1100;				
+			}
+			
+			.goods-1{
+				position: relative;
+				float: left;
+				width: 100%;
+				height: 40%;
+				top: 2%;
+				#border: solid yellow 1px;
+								
+			}
+			
+			.goods-1-1{
+				position: relative;
+				float: left;
+				left: 2%;
+				width: 22%;
+				height: 100%;				
+				border: solid lightsteelblue 1px;
+				
+			}
+			.goods-1-1:hover{
+				border: solid red 1px;
+			}
+			
+			.goods-1-1-pic{
+				position: relative;
+				top: 12%;
+				left: 20%;
+				width: 60%;
+				height: 40%;				
+				#border: solid red 1px;
+			}
+			
+			.goods-1-1-name{
+				position: relative;
+				top: 15%;
+				left: 20%;
+				width: 60%;
+				height: 6%;				
+				#border: solid red 1px;
+				font-size: 12px;
+                font-weight: 1100;
+                text-align: center;
+			}
+			.goodsname-href:hover{				
+				color: red;
+				
+			}
+			.goods-1-1-price{
+				position: relative;
+				top: 20%;
+				left: 20%;
+				width: 60%;
+				height: 6%;				
+				#border: solid red 1px;
+				color: red;
+				font-size: 15px;
+                font-weight: 1100;
+                text-align: center;
+			}
+			.goods-1-bottom{
+				position: relative;
+				bottom: -35%;
+				left: 0%;
+				width: 100%;
+				height: 10%;				
+				#border: solid red 1px;
+			}
+			.bottom-buy1{
+				position: relative;
+				float: left;
+				width: 48%;
+				height: 100%;				
+				text-align: center;
+				color: red;
+				border: solid lightsteelblue 1px;
+			
+			}
+			.bottom-buy1:hover{
+				background-color: red;
+			}
+			
+			.people-number{
+				position: relative;
+				line-height: 25px;
+				float: left;
+				width: 50%;
+				height: 100%;
+				border: solid lightsteelblue 1px;
+				font-size: 12px;
+                font-weight: 1100;
+                text-align: center;
+			}
+			
+			.goods-1-2{
+				position: relative;
+				float: left;
+				left: 4%;
+				width: 22%;
+				height: 100%;				
+				border: solid lightsteelblue 1px;
+				
+			}
+			
+			.goods-1-2:hover{
+				border: solid red 1px;
+			}
+			
+			.goods-1-3{
+				position: relative;
+				float: left;
+				left: 6%;
+				width: 22%;
+				height: 100%;				
+				border: solid lightsteelblue 1px;
+				
+			}
+			
+			.goods-1-3:hover{
+				border: solid red 1px;
+			}
+			
+			.goods-1-4{
+				position: relative;
+				float: left;
+				left: 8%;
+				width: 22%;
+				height: 100%;				
+				border: solid lightsteelblue 1px;
+				
+			}
+			
+			.goods-1-4:hover{
+				border: solid red 1px;
+			}
+			
+			.goods-2{
+				position: relative;
+				float: left;
+				width: 100%;
+				height: 40%;
+				top: 5%;
+				#border: solid yellow 1px;
+				
+			}
+			
+			
+		</style>
+
+	</head>
+
+	<body>
+		<div class="all-page">
+
+			<div class="body-head">
+				<div class="head-car">
+					<div class="order-list">
+						<a href="#">我的订单</a>
+					</div>
+					<div class="shopping-car">
+						<div class="car-style">
+							<a href="#">购物车</a>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+
+			<div class="body">
+				<div class="body-list">
+					<div class="list-head"></div>
+					<div class="list-div1">
+						<a href="#">荣耀</a>
+					</div>
+					<div class="list-div1">
+						<a href="#">HUAWEI P系列</a>
+					</div>
+					<div class="list-div1">
+						<a href="#">荣耀畅玩系列</a>
+					</div>
+					<div class="list-div1">
+						<a href="#">HUAWEI Mate系列</a>
+					</div>
+					<div class="list-div1">
+						<a href="#">HUAWEI nova系列</a>
+					</div>
+					
+
+				</div>
+				
+				<div class="goods-1">
+					<div class="goods-1-1">
+						<div class="goods-1-1-pic">
+							<a href="honor10"><img src="img/荣耀10.jpg" style="width: 100%;height: 100%;"/></a>
+						</div>
+						<div class="goods-1-1-name">
+							<a href="honor10" class="goodsname-href">荣耀10</a>
+							<!-- <a href="register1" class="goodsname-href">荣耀10</a> -->
+						</div>
+						<div class="goods-1-1-price">
+							￥2199
+						</div>
+						<div class="goods-1-bottom">
+							<div class="bottom-buy1">
+								<a href="#" class="bottom-buy1-href">选购</a>
+							</div>
+							<div class="people-number">
+								63632人评价
+							</div>
+						</div>
+						
+					</div>
+					
+					<div class="goods-1-2">
+						<div class="goods-1-1-pic">
+							<a href="#"><img src="img/荣耀magic2.png" style="width: 100%;height: 100%;"/></a>
+						</div>
+						<div class="goods-1-1-name">
+							<a href="#" class="goodsname-href">荣耀magic2</a>
+						</div>
+						<div class="goods-1-1-price">
+							￥3799
+						</div>
+						<div class="goods-1-bottom">
+							<div class="bottom-buy1">
+								<a href="#" class="bottom-buy1-href">选购</a>
+							</div>
+							<div class="people-number">
+								22256人评价
+							</div>
+						</div>
+												
+					</div>
+					
+					<div class="goods-1-3">
+						<div class="goods-1-1-pic">
+							<a href="#"><img src="img/荣耀v20.png" style="width: 100%;height: 100%;"/></a>
+						</div>
+						<div class="goods-1-1-name">
+							<a href="#" class="goodsname-href">荣耀V20</a>
+						</div>
+						<div class="goods-1-1-price">
+							￥3499
+						</div>
+						<div class="goods-1-bottom">
+							<div class="bottom-buy1">
+								<a href="#" class="bottom-buy1-href">选购</a>
+							</div>
+							<div class="people-number">
+								19197人评价
+							</div>
+						</div>
+												
+					</div>
+					
+					<div class="goods-1-4">
+						<div class="goods-1-1-pic">
+							<a href="#"><img src="img/荣耀8X.jpg" style="width: 100%;height: 100%;"/></a>
+						</div>
+						<div class="goods-1-1-name">
+							<a href="#" class="goodsname-href">荣耀8X</a>
+						</div>
+						<div class="goods-1-1-price">
+							￥1399
+						</div>
+						<div class="goods-1-bottom">
+							<div class="bottom-buy1">
+								<a href="#" class="bottom-buy1-href">选购</a>
+							</div>
+							<div class="people-number">
+								145144人评价
+							</div>
+						</div>
+												
+					</div>
+					
+					
+					
+					
+					
+					
+				</div>
+				
+				<div class="goods-2">
+					
+					<div class="goods-1-1">
+						<div class="goods-1-1-pic">
+							<a href="#"><img src="img/荣耀V10.jpg" style="width: 100%;height: 100%;"/></a>
+						</div>
+						<div class="goods-1-1-name">
+							<a href="#" class="goodsname-href">荣耀V10</a>
+						</div>
+						<div class="goods-1-1-price">
+							￥2799
+						</div>
+						<div class="goods-1-bottom">
+							<div class="bottom-buy1">
+								<a href="#" class="bottom-buy1-href">选购</a>
+							</div>
+							<div class="people-number">
+								144029人评价
+							</div>
+						</div>
+						
+					</div>
+					
+					<div class="goods-1-2">
+						<div class="goods-1-1-pic">
+							<a href="#"><img src="img/荣耀9i.png" style="width: 100%;height: 100%;"/></a>
+						</div>
+						<div class="goods-1-1-name">
+							<a href="#" class="goodsname-href">荣耀9i</a>
+						</div>
+						<div class="goods-1-1-price">
+							￥1199
+						</div>
+						<div class="goods-1-bottom">
+							<div class="bottom-buy1">
+								<a href="#" class="bottom-buy1-href">选购</a>
+							</div>
+							<div class="people-number">
+								98998人评价
+							</div>
+						</div>
+												
+					</div>
+					
+					<div class="goods-1-3">
+						<div class="goods-1-1-pic">
+							<a href="#"><img src="img/荣耀Note10.png" style="width: 100%;height: 100%;"/></a>
+						</div>
+						<div class="goods-1-1-name">
+							<a href="#" class="goodsname-href">荣耀Note10</a>
+						</div>
+						<div class="goods-1-1-price">
+							￥3399
+						</div>
+						<div class="goods-1-bottom">
+							<div class="bottom-buy1">
+								<a href="#" class="bottom-buy1-href">选购</a>
+							</div>
+							<div class="people-number">
+								27032人评价
+							</div>
+						</div>
+												
+					</div>
+					
+					<div class="goods-1-4">
+						<div class="goods-1-1-pic">
+							<a href="#"><img src="img/荣耀10青春版.png" style="width: 100%;height: 100%;"/></a>
+						</div>
+						<div class="goods-1-1-name">
+							<a href="#" class="goodsname-href">荣耀10青春版</a>
+						</div>
+						<div class="goods-1-1-price">
+							￥1399
+						</div>
+						<div class="goods-1-bottom">
+							<div class="bottom-buy1">
+								<a href="#" class="bottom-buy1-href">选购</a>
+							</div>
+							<div class="people-number">
+								13649人评价
+							</div>
+						</div>
+												
+					</div>
+										
+				</div>				
+
+			</div>
+
+		</div>
+
+	</body>
+
+</html>

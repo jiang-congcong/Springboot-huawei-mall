@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<title></title>
+
+<style type="text/css">
+.body-head {
+	width: 100%;
+	height: 100%;
+	background-image: url(img/1.jpg);
+	border-width: 5px;
+	border-style: solid;
+	border-color: red;
+}
+
+.head1 {
+	background-image: url(images/1.jpg);
+	border-width: 5px;
+	border-style: solid;
+	border-color: red;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	min-width: 1000px;
+	z-index: -10;
+	zoom: 1;
+	background-color: #fff;
+	background-repeat: no-repeat;
+	background-size: cover;
+	-webkit-background-size: cover;
+	-o-background-size: cover;
+	background-position: center 0;
+}
+
+.head2 {
+	position: relative;
+	left: 30%;
+	top: 35%;
+	width: 40%;
+	height: 30%;
+	border-width: 2px;
+	border-style: solid;
+	border-color: yellow;
+}
+
+.form {
+	position: relative;
+	left: 25%;
+	top: 20%;
+	width: 60%;
+	height: 80%;
+	border-width: 2px;
+	border-style: solid;
+	border-color: black;
+}
+
+.errorshow {
+	position: relative;
+	left: 30%;
+	width: 40%;
+	height: 10%;
+	border-width: 2px;
+	border-style: solid;
+	border-color: red;
+}
+</style>
+
+<script>
+	function register() {
+		location.href = "register1";
+	}
+</script>
+
+
+
+</head>
+<body>
+		
+		<div class="head1">
+			
+			<div class="head2">
+				<form action="login" method="get" class="form">
+				
+				username:<input type="text" name="user" id="username"></input><br/><br/>
+				password:<input type="password" name="pass" id="password"></input><br/><br/>
+				<div style="width: 20%;position:relative;float:left;height: 10%;"></div>
+				<input type="submit" value="登录" id="login" style="width: 20%;"/>
+				
+				<input type="button" value="注册" id="register" style="width: 20%;" onclick="window.location.href='register1'"/>
+				
+				</form>
+				<div class="errorshow">
+				<span style="color:red;" th:text="${errormsg}"></span>
+				</div>
+			</div>
+			
+		</div>
+		
+		
+	</body>
+</html>

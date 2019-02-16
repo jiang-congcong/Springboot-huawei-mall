@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<style>
+			
+			.all-page {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				#border: solid red 2px;
+				overflow-y:auto; 
+				
+			}
+			
+			.body-head {
+				width: 100%;
+				height: 5%;
+				#border: solid red 2px;
+				background-color: #E3E3E3;
+			}
+			
+			.head-car {
+				position: relative;
+				left: 80%;
+				width: 20%;
+				height: 100%;
+				#border: solid red 2px;
+			}
+			
+			.order-list {
+				position: relative;
+				#background-color: yellowgreen;
+				width: 30%;
+				height: 100%;
+				font-size: 15px;
+				font-weight: 1100;
+				text-align: center;
+				color: #D2D2D2;
+				line-height: 100%;
+				top: 30%;
+				float: left;
+			}
+			
+			a:link,
+			a:visited {
+				text-decoration: none;
+				color: #999999;
+			}
+			
+			a:hover {
+				text-decoration: none;
+				color: #404040;
+			}
+			
+			.shopping-car {
+				position: relative;
+				background-color: #C9C9C9;
+				width: 30%;
+				height: 100%;
+				#border: solid red 2px;
+				float: left;
+			}
+			
+			.car-style {
+				position: relative;
+				width: 100%;
+				height: 70%;
+				font-size: 15px;
+				font-weight: 1100;
+				text-align: center;
+				color: #000000;
+				line-height: 100%;
+				top: 25%;
+				float: left;
+				#border: solid red 2px;
+			}
+			
+			.body {
+				position: relative;
+				width: 60%;
+				height: 100%;
+				left: 20%;
+				top: 1%;
+				#border: solid red 2px;
+				float: left;
+			}
+			
+			.show-img{
+				position: relative;
+				width: 40%;
+				height: 70%;
+				#border: solid red 2px;
+				float: left;
+			}
+			
+			.main-img{
+				position: relative;
+				float: left;
+				#left: 5%;
+				width: 100%;
+				height: 75%;
+				#border: solid red 2px;
+				
+				background-repeat: no-repeat;
+  				background-size: cover;
+  				-webkit-background-size: cover;
+  				-o-background-size: cover;
+  				background-position: center 0;
+				
+			}
+			
+			.list-img{
+				position: relative;
+				float: left;
+				top: 2%;
+				
+				width: 100%;
+				height: 16%;
+				#border: solid red 2px;
+
+			}
+			
+			.list-img-1{
+				position: relative;
+				float: left;
+				width: 20%;
+				height: 100%;
+				#border: solid red 1px;
+			}
+			
+			.list-img-1:hover{
+				border: solid red 1px;
+			}
+			
+			.list-img-2{
+				position: relative;
+				float: left;
+				width: 19%;
+				height: 100%;
+				#border: solid red 1px;
+			}
+			
+			.detail{
+				position: relative;
+				float: left;
+				width: 59%;
+				height: 85%;
+				#border: solid red 2px;
+			}
+			
+			.detail-name{
+				position: relative;
+				float: left;
+				width: 100%;
+				height: 15%;
+				#border: solid red 2px;
+				#line-height: 80px;
+				font-size: 18px;
+				font-weight: 1500;
+							
+			}
+			
+			.detail-name-1{
+				position: relative;
+				float: left;
+				
+				width: 100%;
+				height: 20%;
+				#border: solid red 2px;
+				
+				font-size: 12px;
+				font-weight: 1100;
+			}
+			
+			.detail-name-2{
+				position: relative;
+				float: left;
+				width: 100%;
+				height: 60%;
+				#border: solid red 2px;
+				#line-height: 80px;
+				font-size: 18px;
+				font-weight: 1500;
+			}
+			
+			.price{
+				position: relative;
+				float: left;
+				width: 100%;
+				height: 20%;
+				background-color:#E6E6E6;
+				#border: solid red 2px;
+			}
+			
+			.price-number{
+				position: relative;
+				float: left;
+				width: 100%;
+				height: 20%;
+				#border: solid red 2px;
+				
+			}
+			.price-number-word{
+				position: relative;
+				float: left;
+				width: 15%;
+				height: 100%;
+				font-size: 12px;
+				font-weight: 1100;
+				line-height: 25px;
+				#border: solid red 2px;
+				
+			}
+			
+			.price-number-money{
+				position: relative;
+				float: left;
+				width: 20%;
+				height: 100%;
+				font-size: 18px;
+				font-weight: 1800;
+				#border: solid red 2px;
+				color: red;
+			}
+			
+			.money-paper{
+				position: relative;
+				float: left;
+				top: 5%;
+				width: 100%;
+				height: 20%;
+				#border: solid red 2px;
+			}
+			
+			.money-paper-word{
+				position: relative;
+				float: left;
+				width: 15%;
+				height: 100%;
+				font-size: 12px;
+				font-weight: 1100;
+				line-height: 25px;
+				#border: solid red 2px;
+				
+			}
+			
+			.money-paper-get{
+				position: relative;
+				float: left;
+				width: 50%;
+				height: 100%;
+				#border: solid red 2px;
+			}
+			.money-paper-get-word{
+				position: relative;
+				float: left;
+				width: 30%;
+				height: 100%;
+				font-size: 12px;
+				font-weight: 1100;
+				line-height: 20px;
+				#border: solid red 2px;
+				background-color:darksalmon;
+			}
+			
+			.money-paper-get-href{
+				position: relative;
+				float: left;
+				width: 30%;
+				height: 100%;
+				font-size: 12px;
+				font-weight: 1100;
+				line-height: 20px;
+				#border: solid red 2px;
+				
+			}
+			.money-paper-get-href a{
+				color: red;
+			}
+			.price-sale{
+				position: relative;
+				float: left;
+				top: 10%;
+				width: 100%;
+				height: 40%;
+				#border: solid red 2px;
+			}
+			
+			.price-sale-word{
+				position: relative;
+				float: left;
+				width: 15%;
+				height: 100%;
+				font-size: 12px;
+				font-weight: 1100;
+				line-height: 25px;
+				#border: solid red 2px;
+			}
+			
+			.price-sale-list{
+				position: relative;
+				float: left;
+				width: 83%;
+				height: 100%;				
+				#border: solid red 2px;
+			}
+			
+			.price-sale-list-1{
+				position: relative;
+				float: left;
+				width: 100%;
+				height: 45%;				
+				#border: solid red 2px;
+			}
+			
+			.price-sale-list-1-1{
+				position: relative;
+				float: left;
+				width: 15%;
+				height: 100%;
+				font-size: 12px;
+				font-weight: 1100;	
+				text-align: center;			
+				#border: solid red 1px;
+				color: red;
+			}
+			
+			.price-sale-list-1-2{
+				position: relative;
+				float: left;			
+				width: 70%;
+				height: 100%;
+				font-size: 12px;
+				font-weight: 1100;	
+						
+				#border: solid red 1px;
+				
+			}
+			
+			.service{
+				position: relative;
+				float: left;			
+				width: 100%;
+				height: 8%;
+				#border: solid red 2px;
+			}
+			.service-1{
+				position: relative;
+				float: left;			
+				width: 100%;
+				height: 48%;
+				#border: solid red 2px;
+			}
+			.service-1-name{
+				position: relative;
+				float: left;			
+				width: 15%;
+				height: 100%;
+				font-size: 12px;
+				font-weight: 1100;
+				#border: solid red 2px;
+			}
+			
+			.service-1-word{
+				position: relative;
+				float: left;			
+				width: 80%;
+				height: 100%;
+				font-size: 12px;
+				font-weight: 1100;
+				#border: solid red 2px;
+			}
+			
+			.parting-line{
+				position: relative;
+				float: left;			
+				width: 100%;
+				height: 2%;
+				color: #E6E6E6;
+				#border: solid red 2px;
+				
+			}
+			
+			.choose{
+				position: relative;
+				float: left;			
+				width: 100%;
+				height: 40%;
+				#border: solid red 2px;
+			}
+			
+			.choose-color{
+				position: relative;
+				float: left;
+				top: 2%;			
+				width: 100%;
+				height: 20%;
+				#border: solid red 2px;
+			}
+			
+			.choose-color-word{
+				position: relative;
+				float: left;			
+				width: 15%;
+				height: 100%;
+				font-size: 12px;
+				font-weight: 1100;
+				line-height: 40px;
+				#border: solid red 2px;
+			}
+			.choose-color-pic1{
+				position: relative;
+				float: left;
+				left: 2%;			
+				width: 14%;
+				height: 100%;
+				border: solid black 1px;
+				
+			}
+			
+			.choose-color-pic1:hover{
+				border: solid red 1px;
+			}
+			
+		
+			
+			
+			.choose-color-pic2{
+				position: relative;
+				float: left;
+				left: 4%;			
+				width: 14%;
+				height: 100%;
+				border: solid black 1px;
+			}
+			
+			.choose-color-pic2:hover{
+				border: solid red 1px;
+			}
+			
+			.choose-color-pic3{
+				position: relative;
+				float: left;
+				left: 6%;			
+				width: 14%;
+				height: 100%;
+				border: solid black 1px;
+			}
+			
+			.choose-color-pic3:hover{
+				border: solid red 1px;
+			}
+			
+			.choose-color-pic4{
+				position: relative;
+				float: left;
+				left: 8%;			
+				width: 14%;
+				height: 100%;
+				border: solid black 1px;
+			}
+			
+			.choose-color-pic4:hover{
+				border: solid red 1px;
+			}
+			
+			.choose-color-pic5{
+				position: relative;
+				float: left;
+				left: 10%;			
+				width: 14%;
+				height: 100%;
+				border: solid black 1px;
+			}
+			
+			.choose-color-pic5:hover{
+				border: solid red 1px;
+			}
+			
+			.choose-color-pic1-img{
+				position: relative;
+				float: left;
+				left: 10%;
+				top: 10%;			
+				width: 30%;
+				height: 70%;
+				border: solid black 1px;
+			}
+			
+			.choose-color-pic1-color{
+				position: relative;
+				float: left;
+				left: 10%;
+				top: 10%;			
+				width: 50%;
+				height: 70%;
+				font-size: 12px;
+				font-weight: 1100;
+				line-height: 30px;
+				border: solid black 1px;
+			}
+			
+			.choose-version{
+				position: relative;
+				float: left;
+				top: 4%;			
+				width: 100%;
+				height: 20%;
+				#border: solid red 2px;
+			}
+			
+			.choose-version-1{
+				position: relative;
+				float: left;
+				top: 20%;
+				left: 2%;			
+				width: 20%;
+				height: 60%;
+				font-size: 12px;
+				font-weight: 1100;
+				line-height: 30px;
+				text-align: center;
+				border: solid black 1px;
+			}
+			
+			.choose-version-2{
+				position: relative;
+				float: left;
+				top: 20%;
+				left: 4%;			
+				width: 20%;
+				height: 60%;
+				font-size: 12px;
+				font-weight: 1100;
+				line-height: 30px;
+				text-align: center;
+				border: solid black 1px;
+			}
+			
+			.choose-version-3{
+				position: relative;
+				float: left;
+				top: 20%;
+				left: 6%;			
+				width: 20%;
+				height: 60%;
+				font-size: 12px;
+				font-weight: 1100;
+				line-height: 30px;
+				text-align: center;
+				border: solid black 1px;
+			}
+			
+			.blackBorder{
+				position: relative;
+				float: left;
+				top: 20%;
+				left: 2%;			
+				width: 20%;
+				height: 60%;
+				font-size: 12px;
+				font-weight: 1100;
+				line-height: 30px;
+				text-align: center;
+				
+				border: solid red 1px;
+			}
+			.blackBorder1{
+				position: relative;
+				float: left;
+				top: 20%;
+				left: 4%;			
+				width: 20%;
+				height: 60%;
+				font-size: 12px;
+				font-weight: 1100;
+				line-height: 30px;
+				text-align: center;
+				
+				border: solid red 1px;
+			}
+			
+			.blackBorder2{
+				position: relative;
+				float: left;
+				top: 20%;
+				left: 6%;			
+				width: 20%;
+				height: 60%;
+				font-size: 12px;
+				font-weight: 1100;
+				line-height: 30px;
+				text-align: center;
+				
+				border: solid red 1px;
+			}
+			
+			.choose-meal{
+				position: relative;
+				float: left;
+				top: 6%;			
+				width: 100%;
+				height: 20%;
+				#border: solid red 2px;
+			}
+			
+			.choose-meal-list1{
+				position: relative;
+				float: left;
+				top: 20%;
+				left: 2%;			
+				width: 20%;
+				height: 60%;
+				font-size: 12px;
+				font-weight: 1100;
+				line-height: 30px;
+				text-align: center;
+				border: solid red 1px;
+			}
+			
+			.choose-commend{
+				position: relative;
+				float: left;
+				top: 8%;			
+				width: 100%;
+				height: 20%;
+				#border: solid yellow 2px;
+			}
+			
+			.choose-commend-1{
+				position: relative;
+				float: left;
+				top: 20%;
+				left: 2%;			
+				width: 20%;
+				height: 60%;
+				font-size: 12px;
+				font-weight: 1100;
+				line-height: 30px;
+				text-align: center;
+				#background-color: #E6E6E6;
+				border: solid red 1px;
+			}
+			
+			.buybutton{
+				position: relative;
+				float: left;							
+				width: 100%;
+				height: 12%;
+				#border: solid black 2px;
+			}
+			
+			.buybutton-shoppingcar{
+				position: relative;
+				float: left;
+				#top: 20%;
+				left: 20%;							
+				width: 30%;
+				height: 50%;
+				#border: solid red 2px;
+			}
+			
+			.buybutton-buynow{
+				position: relative;
+				float: left;
+				#top: 20%;
+				left: 25%;							
+				width: 30%;
+				height: 50%;
+				#border: solid red 2px;
+			}
+			
+			
+			
+			
+		</style>
+		
+		<script type="text/javascript">
+			 function foo(){
+				var bar = document.getElementById("test");
+				var bar1 = document.getElementById("test2");
+				var bar2 = document.getElementById("test3");
+				document.getElementById("price").innerHTML='￥2199.00';
+				bar.className='blackBorder';
+				bar1.className='choose-version-2';
+				bar2.className='choose-version-3';
+				sessionStorage.setItem('money',2199.00); 
+				sessionStorage.setItem('version',"全网通6G\+64G");
+			
+			}
+			 
+			function foo2(){
+				var bar = document.getElementById("test");
+				var bar1 = document.getElementById("test2");
+				var bar2 = document.getElementById("test3");
+				document.getElementById("price").innerHTML='￥2599.00';
+				bar.className='choose-version-1';
+				bar1.className='blackBorder1';
+				bar2.className='choose-version-3';
+				sessionStorage.setItem('money',2599.00); 
+				sessionStorage.setItem('version',"全网通6G\+128G");
+						
+			}
+			
+			function foo3(){
+				var bar = document.getElementById("test");
+				var bar1 = document.getElementById("test2");
+				var bar2 = document.getElementById("test3");
+				document.getElementById("price").innerHTML='￥2899.00';
+				bar.className='choose-version-1';
+				bar1.className='choose-version-2';
+				bar2.className='blackBorder2';
+				sessionStorage.setItem('money',2899.00); 
+				sessionStorage.setItem('version',"全网通8G+128G");		
+			}
+			
+			/* function foo4(){
+				var price = 2199.00;
+				var money = sessionStorage.getItem('money');
+				location.href = "shoppingcar?price="+money;
+						
+			} */
+			
+			function foo4(){
+				var price = sessionStorage.getItem('money');
+				var color = sessionStorage.getItem('color');
+				var version = sessionStorage.getItem('version');
+				location.href = "shoppingcar?price="+price+"&color="+color+"&version="+version;
+						
+			}
+			
+			function color1(){
+				var div1 = document.getElementById('color1');
+				var div2 = document.getElementById('color2');
+				var div3 = document.getElementById('color3');
+				var div4 = document.getElementById('color4');
+				var div5 = document.getElementById('color5');
+				document.getElementById('img1').src='img/荣耀10各颜色/幻影蓝.jpg';
+				sessionStorage.setItem('color',"幻影蓝");
+				div1.style.setProperty('border','1px solid red');
+				div2.style.setProperty('border','1px solid black');
+				div3.style.setProperty('border','1px solid black');
+				div4.style.setProperty('border','1px solid black');
+				div5.style.setProperty('border','1px solid black');
+			}
+			
+			function color2(){
+				var div1 = document.getElementById('color1');
+				var div2 = document.getElementById('color2');
+				var div3 = document.getElementById('color3');
+				var div4 = document.getElementById('color4');
+				var div5 = document.getElementById('color5');
+				document.getElementById('img1').src='img/荣耀10各颜色/幻影蓝.jpg';
+				sessionStorage.setItem('color',"幻影紫");
+				div1.style.setProperty('border','1px solid black');
+				div2.style.setProperty('border','1px solid red');
+				div3.style.setProperty('border','1px solid black');
+				div4.style.setProperty('border','1px solid black');
+				div5.style.setProperty('border','1px solid black');
+			}
+			
+			function color3(){
+				var div1 = document.getElementById('color1');
+				var div2 = document.getElementById('color2');
+				var div3 = document.getElementById('color3');
+				var div4 = document.getElementById('color4');
+				var div5 = document.getElementById('color5');
+				document.getElementById('img1').src='img/荣耀10各颜色/幻影蓝.jpg';
+				sessionStorage.setItem('color',"幻夜黑");
+				div1.style.setProperty('border','1px solid black');
+				div2.style.setProperty('border','1px solid black');
+				div3.style.setProperty('border','1px solid red');
+				div4.style.setProperty('border','1px solid black');
+				div5.style.setProperty('border','1px solid black');
+			}
+		
+			function color4(){
+				var div1 = document.getElementById('color1');
+				var div2 = document.getElementById('color2');
+				var div3 = document.getElementById('color3');
+				var div4 = document.getElementById('color4');
+				var div5 = document.getElementById('color5');
+				document.getElementById('img1').src='img/荣耀10各颜色/幻影蓝.jpg';
+				sessionStorage.setItem('color',"海鸥灰");
+				div1.style.setProperty('border','1px solid black');
+				div2.style.setProperty('border','1px solid black');
+				div3.style.setProperty('border','1px solid black');
+				div4.style.setProperty('border','1px solid red');
+				div5.style.setProperty('border','1px solid black');
+			}
+			
+			function color5(){
+				var div1 = document.getElementById('color1');
+				var div2 = document.getElementById('color2');
+				var div3 = document.getElementById('color3');
+				var div4 = document.getElementById('color4');
+				var div5 = document.getElementById('color5');
+				document.getElementById('img1').src='img/荣耀10各颜色/幻影蓝.jpg';
+				sessionStorage.setItem('color',"铃兰白");
+				div1.style.setProperty('border','1px solid black');
+				div2.style.setProperty('border','1px solid black');
+				div3.style.setProperty('border','1px solid black');
+				div4.style.setProperty('border','1px solid black');
+				div5.style.setProperty('border','1px solid red');
+			}
+			
+			
+		</script>
+		
+	
+<script src="jquery/jquery-1.11.3.min.js" type="text/javascript"></script>	
+<script>
+	$(document).ready(function() {
+		$("#buycar").click(function() {
+			var price = $("#price").val();
+			$.ajax({
+				type: "post", //以post方式与后台沟通
+				url: "shoppingcar", //调用action
+				data: "price=" + price, //传送的数据
+				dataType: "html", //从action返回的值以html方式解释，或用"text"
+			    success: function(msg) { //如果调用成功，msg为后台action返回值
+					//$('#result').html(msg); //显示action返回值
+				} 
+			});
+		});
+	});
+</script>
+		
+		
+	</head>
+	
+	<body>
+		
+		<div class="all-page">
+
+			<div class="body-head">
+				<div class="head-car">
+					<div class="order-list">
+						<a href="#">我的订单</a>
+					</div>
+					<div class="shopping-car">
+						<div class="car-style">
+							<a href="#">购物车</a>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+			
+			<div class="body">
+				<div class="show-img">
+					
+					<div class="main-img">
+						<img id="img1" src="img/荣耀10.jpg" style="width: 100%; height: 100%;" />
+					</div>
+					
+					<div class="list-img">
+						<div class="list-img-1" onmouseover="document.getElementById('img1').src='img/荣耀10各颜色/幻影蓝.jpg'">
+							<img src="img/荣耀10各颜色/荣耀10幻影蓝.jpg" style="width: 100%;height: 100%;" />
+						</div>
+						<div class="list-img-1" onmouseover="document.getElementById('img1').src='img/荣耀10各颜色/幻影紫.jpg'">
+							<img src="img/荣耀10各颜色/荣耀10幻影紫.jpg" style="width: 100%;height: 100%;"/>
+						</div>
+						<div class="list-img-1" onmouseover="document.getElementById('img1').src='img/荣耀10各颜色/幻夜黑.jpg'">
+							<img src="img/荣耀10各颜色/荣耀10幻夜黑.jpg" style="width: 100%;height: 100%;"/>
+						</div>
+						<div class="list-img-1" onmouseover="document.getElementById('img1').src='img/荣耀10各颜色/海鸥灰.jpg'">
+							<img src="img/荣耀10各颜色/荣耀10海鸥灰.jpg" style="width: 100%;height: 100%;"/>
+						</div>
+						<div class="list-img-2" onmouseover="document.getElementById('img1').src='img/荣耀10各颜色/铃兰白.jpg'">
+							<img src="img/荣耀10各颜色/荣耀10铃兰白.jpg" style="width: 100%;height: 100%;"/>
+						</div>
+												
+					</div>
+					
+				</div>
+				
+			<div class="detail">
+				<div class="detail-name">
+					<div class="detail-name-2">
+						荣耀10 GT游戏加速 AIS手持夜景 AI摄影 全网通 双卡双待 荣耀10GT
+					</div>
+					<div class="detail-name-1">
+						麒麟970AI芯片|GPU Turbo|手持超级夜景
+					</div>
+					
+				</div>
+				
+				<div class="price">
+					<div class="price-number">
+						<div class="price-number-word">价 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;格</div>
+						<div id="price" class="price-number-money">￥2199.00</div>
+					</div>
+					
+					<div class="money-paper">
+						<div class="money-paper-word">优 &nbsp;惠&nbsp; 券</div>
+						<div class="money-paper-get">
+							<div class="money-paper-get-word">满1000减200</div>
+							<div class="money-paper-get-href"><a href="#"> &nbsp;&nbsp;立即领取 ></a></div>
+						</div>
+					</div>
+					
+					<div class="price-sale">
+						<div class="price-sale-word">促 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;销</div>
+						<div class="price-sale-list">
+							<div class="price-sale-list-1">
+								<div class="price-sale-list-1-1">整点赠送</div>
+								<div class="price-sale-list-1-2">10/16/20点下单前300赠移动电源（荣耀指定手机共享）</div>
+							</div>
+							<div class="price-sale-list-1">
+								<div class="price-sale-list-1-1">赠送积分</div>
+								<div class="price-sale-list-1-2">购买即赠商城积分，积分可抵现~</div>
+							</div>
+							
+						</div>
+						
+					</div>
+					
+					
+					
+				</div>
+				
+				
+				<div class="service">
+					<div class="service-1">
+						<div class="service-1-name">服务说明</div>
+						<div class="service-1-word">已满48元已免运费 &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;由华为商城负责发货，并提供售后服务</div>
+					</div>
+					
+					<div class="service-1">
+						<div class="service-1-name">商品编码</div>
+						<div class="service-1-word">2601010038102</div>
+					</div>
+					
+				</div>
+				
+				<div class="parting-line">———————————————————————————————</div>
+				
+				<div class="choose">
+					<div class="choose-color">
+						<div class="choose-color-word">选择颜色</div>
+						<div class="choose-color-pic1" onclick="color1()" id="color1">
+							<div class="choose-color-pic1-img"><img src="img/荣耀10各颜色/幻影蓝.jpg" style="width: 100%;height: 100%;"/></div>
+							<div class="choose-color-pic1-color">幻影蓝</div>
+						</div>
+						<div class="choose-color-pic2" onclick="color2()" id="color2">
+							<div class="choose-color-pic1-img"><img src="img/荣耀10各颜色/幻影紫.jpg" style="width: 100%;height: 100%;"/></div>
+							<div class="choose-color-pic1-color">幻影紫</div>
+						</div>
+						<div class="choose-color-pic3" onclick="color3()" id="color3">
+							<div class="choose-color-pic1-img"><img src="img/荣耀10各颜色/幻夜黑.jpg" style="width: 100%;height: 100%;"/></div>
+							<div class="choose-color-pic1-color">幻夜黑</div>
+						</div>
+						<div class="choose-color-pic4" onclick="color4()" id="color4">
+							<div class="choose-color-pic1-img"><img src="img/荣耀10各颜色/海鸥灰.jpg" style="width: 100%;height: 100%;"/></div>
+							<div class="choose-color-pic1-color">海鸥灰</div>
+						</div>
+						<div class="choose-color-pic5" onclick="color5()" id="color5">
+							<div class="choose-color-pic1-img"><img src="img/荣耀10各颜色/铃兰白.jpg" style="width: 100%;height: 100%;"/></div>
+							<div class="choose-color-pic1-color">铃兰白</div>
+						</div>
+					</div>
+					
+					<div class="choose-version">
+						<div class="choose-color-word">选择版本</div>
+						
+						<div  id="test" class="choose-version-1" onclick="foo()">全网通6G+64G</div>
+						<div  id="test2" class="choose-version-2" onclick="foo2()">全网通6G+128G</div>
+						<div  id="test3" class="choose-version-3" onclick="foo3()">全网通8G+128G</div>
+						
+					</div>
+					
+					<div class="choose-meal">
+						<div class="choose-color-word">选择套餐</div>
+						
+						<div class="choose-meal-list1" >官方标配</div>
+						
+					</div>
+					
+					<div class="choose-commend">
+						<div class="choose-color-word">推荐</div>
+						<div class="choose-version-1" style="background-color: #E6E6E6;">荣耀10青春版</div>
+						<div class="choose-version-2" style="background-color: #E6E6E6;">荣耀V10</div>
+						<div class="choose-version-3" style="background-color: #E6E6E6;">荣耀magic2</div>
+					</div>
+					
+					
+				</div>
+				
+			
+			
+			<div class="buybutton">
+				
+				<div class="buybutton-shoppingcar">
+					<input id="buycar" onclick="foo4()" type="button" value="加入购物车" style="width: 100%;height: 100%;background-color: darkorange;"/>					
+				</div>
+				
+				<div class="buybutton-buynow">
+					<input type="button" value="立即购买" style="width: 100%;height: 100%;background-color:red;"/>					
+				</div>
+				
+			</div>
+				
+				
+			</div>	
+				
+				
+				
+				
+				
+			</div>
+			
+			
+		</div>
+		
+		
+		
+		
+	</body>
+</html>
